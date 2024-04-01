@@ -1,0 +1,60 @@
+{
+  "id": "associated_brand",
+  "type": "SharedSlice",
+  "name": "AssociatedBrand",
+  "description": "AssociatedBrand",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "background": {
+          "type": "Boolean",
+          "config": {
+            "label": "Background",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        },
+        "custom_padding_top": {
+          "type": "Number",
+          "config": {
+            "label": "Custom padding top",
+            "placeholder": ""
+          }
+        },
+        "custom_padding_bottom": {
+          "type": "Number",
+          "config": {
+            "label": "Custom padding bottom",
+            "placeholder": ""
+          }
+        },
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading1,heading2,heading3,heading4,heading5,heading6,strong"
+          }
+        }
+      },
+      "items": {
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      }
+    }
+  ]
+}

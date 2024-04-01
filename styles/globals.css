@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --header-height: 76px;
+}
+
+body {
+  font-family: 'Helvetica, Arial, sans-serif'
+}
+
+@layer base {
+  html {
+    @apply h-full scroll-smooth antialiased;
+  }
+  body {
+    @apply flex h-full flex-col;
+  }
+
+  main {
+    @apply flex-1;
+  }
+
+  #__next {
+    @apply contents;
+  }
+
+  .section {
+    @apply py-20;
+  }
+}
+
+.section-wrapper {
+  /* max-width: 1200px; */
+  /* margin: 0 auto; */
+  /* padding: 15px 10px; */
+}
+
+.text-tittle {
+  font-family: helvetica, serif;
+  font-style: normal;
+  font-weight: 600;
+  text-decoration: none;
+  color: #231f20;
+  font-size: 32px;
+  text-transform: none;
+}

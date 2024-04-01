@@ -1,0 +1,151 @@
+{
+  "format": "custom",
+  "id": "layout",
+  "label": "Layout",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "header": {
+      "logo": {
+        "type": "Group",
+        "config": {
+          "label": "Logo",
+          "repeat": false,
+          "fields": {
+            "logo_icon": {
+              "type": "Image",
+              "config": {
+                "label": "Logo Icon",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "logo_icon_link": {
+              "type": "Link",
+              "config": {
+                "label": "Logo icon link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      },
+      "cta": {
+        "type": "Group",
+        "config": {
+          "label": "CTA",
+          "repeat": false,
+          "fields": {
+            "cta_login": {
+              "type": "Text",
+              "config": {
+                "label": "CTA Login",
+                "placeholder": ""
+              }
+            },
+            "cta_signup": {
+              "type": "Text",
+              "config": {
+                "label": "CTA Signup",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "navigation_item": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    },
+    "footer": {
+      "cta_logo_link": {
+        "type": "Link",
+        "config": {
+          "label": "CTA logo link",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "cta_link_logo": {
+        "type": "Image",
+        "config": {
+          "label": "CTA Link logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "address": {
+        "type": "Text",
+        "config": {
+          "label": "Address",
+          "placeholder": ""
+        }
+      },
+      "phone_number": {
+        "type": "Text",
+        "config": {
+          "label": "Phone number",
+          "placeholder": ""
+        }
+      },
+      "email": {
+        "type": "Text",
+        "config": {
+          "label": "Email",
+          "placeholder": ""
+        }
+      },
+      "social_media": {
+        "type": "Link",
+        "config": {
+          "label": "Social Media",
+          "select": "document",
+          "customtypes": ["social_media"]
+        }
+      },
+      "copy_right": {
+        "type": "Group",
+        "config": {
+          "label": "Copy Right",
+          "repeat": true,
+          "fields": {
+            "primary_text": {
+              "type": "Text",
+              "config": {
+                "label": "Primary text",
+                "placeholder": ""
+              }
+            },
+            "secondary_text": {
+              "type": "Text",
+              "config": {
+                "label": "Secondary text",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "slices1": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "footer_item": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

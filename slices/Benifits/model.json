@@ -1,0 +1,124 @@
+{
+  "id": "benifits",
+  "type": "SharedSlice",
+  "name": "Benifits",
+  "description": "Benifits",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "background": {
+          "type": "Boolean",
+          "config": {
+            "label": "Background",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        },
+        "custom_padding_top": {
+          "type": "Number",
+          "config": {
+            "label": "Custom padding top",
+            "placeholder": ""
+          }
+        },
+        "custom_padding_bottom": {
+          "type": "Number",
+          "config": {
+            "label": "Custom padding bottom",
+            "placeholder": ""
+          }
+        },
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading1,heading2,heading3,heading4,heading5,heading6,strong"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,list-item"
+          }
+        },
+        "cta_link_register": {
+          "type": "Link",
+          "config": {
+            "label": "CTA Link Register",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "cta_label_register": {
+          "type": "Text",
+          "config": {
+            "label": "CTA Label Register",
+            "placeholder": ""
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "text_footer": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Text footer",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,embed"
+          }
+        },
+        "cta_apple": {
+          "type": "Link",
+          "config": {
+            "label": "CTA Apple",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "cta_apple_image": {
+          "type": "Image",
+          "config": {
+            "label": "CTA Apple image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "cta_ch_play": {
+          "type": "Link",
+          "config": {
+            "label": "CTA CH play",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "cta_ch_play_image": {
+          "type": "Image",
+          "config": {
+            "label": "CTA CH play image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

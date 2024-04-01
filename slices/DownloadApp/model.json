@@ -1,0 +1,60 @@
+{
+  "id": "download_app",
+  "type": "SharedSlice",
+  "name": "DownloadApp",
+  "description": "DownloadApp",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading1,heading2,heading3,heading4,heading5,heading6,strong"
+          }
+        },
+        "cta_apple": {
+          "type": "Link",
+          "config": {
+            "label": "CTA Apple",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "cta_apple_image": {
+          "type": "Image",
+          "config": {
+            "label": "CTA Apple image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "cta_ch_play": {
+          "type": "Link",
+          "config": {
+            "label": "CTA CH play",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "cta_ch_play_image": {
+          "type": "Image",
+          "config": {
+            "label": "CTA CH play image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
