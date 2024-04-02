@@ -20,11 +20,11 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       data-slice-variation={slice.variation}
     >
       <SliceWrapper>
-        <div className="h-screen relative">
+        <div className="h-[98vh] relative">
           <div className="h-full w-full absolute top-0 -z-10">
-            <PrismicNextImage field={slice.primary.image} className="h-full w-full bg-cover bg-no-repeat"/>
+            <PrismicNextImage field={slice.primary.image} className="w-full bg-cover bg-no-repeat"/>
           </div>
-          <SectionWrapper className="h-full">
+          <SectionWrapper className="h-full pt-20 pb-0">
             {slice.variation === 'default' && <HeroDefault slice={slice} />}
           </SectionWrapper>
         </div>

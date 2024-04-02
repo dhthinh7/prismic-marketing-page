@@ -26,7 +26,10 @@
             "label": "Title",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,em"
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,embed,rtl,hyperlink",
+            "labels": [
+              "PRIMARY_BOLD"
+            ]
           }
         },
         "description": {
@@ -35,7 +38,7 @@
             "label": "Description",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,strong,em"
+            "multi": "paragraph,strong,em,heading4,heading5,heading6,preformatted"
           }
         },
         "cta_label": {

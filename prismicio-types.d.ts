@@ -557,6 +557,37 @@ export type BenifitsSlice = prismic.SharedSlice<
  */
 export interface DownloadAppSliceDefaultPrimary {
   /**
+   * Background field in *DownloadApp → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: download_app.primary.background
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  background: prismic.BooleanField;
+
+  /**
+   * Custom padding top field in *DownloadApp → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: download_app.primary.custom_padding_top
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  custom_padding_top: prismic.NumberField;
+
+  /**
+   * Custom padding bottom field in *DownloadApp → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: download_app.primary.custom_padding_bottom
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  custom_padding_bottom: prismic.NumberField;
+
+  /**
    * Title field in *DownloadApp → Primary*
    *
    * - **Field Type**: Rich Text
@@ -683,6 +714,26 @@ export interface FeatureSliceDefaultPrimary {
   tag: prismic.KeyTextField;
 
   /**
+   * Title field in *Feature → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *Feature → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
    * Image field in *Feature → Primary*
    *
    * - **Field Type**: Image
@@ -785,6 +836,26 @@ export interface FeatureSliceFindCandidatesPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   tag: prismic.KeyTextField;
+
+  /**
+   * Title field in *Feature → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *Feature → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
 
   /**
    * Image field in *Feature → Primary*

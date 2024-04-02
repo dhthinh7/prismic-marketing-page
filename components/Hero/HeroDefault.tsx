@@ -15,15 +15,15 @@ export default function HeroDefault({ slice }: IHeroDefault) {
   return (
     <div className='w-1/2 flex items-center h-full'>
       <div className=''>
-        <RichText field={slice.primary.title} className="font-semibold text-white leading-tight text-4xl mb-3" />
-        <RichText field={slice.primary.description} className="font-semibold text-white leading-snug text-2xl" />
-        <Button>
+        <RichText field={slice.primary.title} className="text-white leading-[1.167]" />
+        <RichText field={slice.primary.description} className="text-white opacity-70 pr-16"/>
+        <Button className='p-5 rounded-xl'>
           <PrismicNextLink field={slice.primary.cta_link}>
             {slice.primary.cta_label}
           </PrismicNextLink>
         </Button>
-        <div className='flex items-center absolute top-[80%] right-[10%] gap-4'>
-          <Button variant='solid' color='black'>
+        <div className='flex items-center absolute top-[85%] right-[10%] gap-3'>
+          <Button variant='solid' color='black' className='p-5 rounded-xl'>
             {slice.primary.cta_tag}
           </Button>
           <PrismicNextLink field={slice.primary.cta_apple} className='h-16 w-16'>

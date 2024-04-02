@@ -44,6 +44,28 @@
 				"alt": null,
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Magna quis nisi sint tempor ipsum Lorem consectetur enim nulla nulla incididunt amet ullamco."
+						}
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "In anim aute ad minim deserunt cillum velit eiusmod adipisicing minim nostrud cupidatat consectetur dolor adipisicing. Excepteur reprehenderit cillum quis incididunt aute."
+						}
+					}
+				]
 			}
 		},
 		"items": [
@@ -153,6 +175,28 @@
 				"alt": null,
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Exercitation reprehenderit ut adipisicing sit. Cupidatat magna quis deserunt culpa adipisicing. Elit incididunt consequat eu labore consectetur elit officia."
+						}
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Quis consectetur veniam reprehenderit eu duis ipsum laborum excepteur anim qui cillum velit. Cupidatat magna aliqua aute excepteur laborum ut ad velit veniam aliqua consectetur consectetur aliquip."
+						}
+					}
+				]
 			}
 		},
 		"items": [

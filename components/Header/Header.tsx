@@ -29,10 +29,10 @@ export default async function Header({layout}: IHeader) {
               </div>
               <div className="flex items-center gap-4">
                 <Button variant="outline" color="white" className="">
-                  Login
+                  Log In
                 </Button>
                 <Button variant="solid" color="white" className="">
-                  Signup
+                  Sign Up
                 </Button>
               </div>
             </div>

@@ -1,8 +1,8 @@
 import { cn } from "@/utils";
+import { E_LABEL } from '@/utils/constants'
 import { isFilled, RichTextField } from "@prismicio/client";
 import { PrismicRichText } from "@prismicio/react";
 import { FilledContentRelationshipField, FilledLinkToWebField, FilledLinkToMediaField } from "@prismicio/types";
-import Image from "next/image";
 
 interface IRichText {
   field: RichTextField
@@ -21,8 +21,8 @@ const linkResolver = (doc: FilledContentRelationshipField<string, string, unknow
 
   return '/'
 }
-
-export default function RichText({ field, className, h1Class, h2Class, h3Class, h6Class }: IRichText) {
+// h1, h2, h3, h5, h6, label
+export default function RichText({ field, className, h1Class, h2Class, h3Class, h5Class, h6Class }: IRichText) {
   return (
     field && (
       <div className={className}>
@@ -30,28 +30,28 @@ export default function RichText({ field, className, h1Class, h2Class, h3Class, 
           field={field}
           components={{
             heading1: ({ children }) => (
-              <h2 className={cn('text-5xl font-semibold mb-9', h1Class)}>
+              <h2 className={cn('text-[65px] font-medium mb-5', h1Class)}>
                 {children}
               </h2>
             ),
             heading2: ({ children }) => (
-              <h2 className={cn('text-3xl font-semibold mb-5', h2Class)}>
+              <h2 className={cn('text-4xl font-semibold mb-5', h2Class)}>
                 {children}
               </h2>
             ),
             heading3: ({ children }) => (
-              <h3 className={cn('text-[28px] font-medium mb-5', h3Class)}>
+              <h3 className={cn('text-[26px] font-medium mb-5', h3Class)}>
                 {children}
               </h3>
             ),
             heading4: ({ children }) => <h4>{children}</h4>,
             heading5: ({ children }) => (
-              <h5 className="font-semibold text-xl mb-5">
+              <h5 className={cn('text-lg mb-5', h5Class)}>
                 {children}
               </h5>
             ),
             heading6: ({ children }) => (
-              <h6 className={cn('font-semibold mb-5', h6Class)}>
+              <h6 className={cn('mb-5', h6Class)}>
                 {children}
               </h6>
             ),
@@ -62,9 +62,9 @@ export default function RichText({ field, className, h1Class, h2Class, h3Class, 
             strong: ({ children }) => <strong>{children}</strong>,
             em: ({ children }) => <em>{children}</em>,
             listItem: ({ children }) => (
-              <div className="flex items-center ml-4 my-2">
-                <div className="w-1 h-1 rounded-full bg-black mr-3 shrink-0"></div>
-                <div>{children}</div>
+              <div className="flex items-center my-4 text-sm font-medium">
+                <div className="w-1 h-1 rounded-full bg-secondary mr-3 shrink-0"></div>
+                <div className="text-secondary">{children}</div>
               </div>
             ),
             oListItem: ({ children }) => <li>{children}</li>,
@@ -98,6 +98,17 @@ export default function RichText({ field, className, h1Class, h2Class, h3Class, 
             hyperlink: ({ node, children }) => {
               const url = node.data.url
               return <a target="_blank" className="hover:underline text-blue-600" href={url}>{children}</a>
+            },
+            label: ({ node, children }) => {
+              console.log('node', node.data.label)
+              switch (node.data.label.toLowerCase()) {
+                case E_LABEL.PRIMARY_BOLD.toLowerCase():
+                  return <span className="font-bold">{children}</span>
+                case E_LABEL.PURE_HIGHLIGHT.toLowerCase():
+                  return <span className="text-primary-tag">{children}</span>
+                default:
+                  return <span>{children}</span>
+              }
             },
           }}
         />

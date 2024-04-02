@@ -7,9 +7,9 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "heading1",
+						"type": "paragraph",
 						"content": {
-							"text": "Beauty"
+							"text": "Aliqua amet irure sunt laborum quis mollit laboris do elit non pariatur exercitation tempor. Qui veniam exercitation laborum eu cillum occaecat aliquip consectetur magna consectetur fugiat id sunt eu laborum. Mollit sit excepteur consequat minim consectetur dolore ullamco."
 						}
 					}
 				]
@@ -52,7 +52,6 @@
 				}
 			},
 			"cta_ch_play_image": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1587840171670-8b850147754e",
@@ -70,7 +69,24 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"background": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			},
+			"custom_padding_top": {
+				"__TYPE__": "FieldContent",
+				"value": "87",
+				"type": "Number"
+			},
+			"custom_padding_bottom": {
+				"__TYPE__": "FieldContent",
+				"value": "10",
+				"type": "Number"
 			}
 		},
 		"items": []
