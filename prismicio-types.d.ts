@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomePageDocumentDataSlicesSlice =
+  | BackgroundWaveSlice
   | DownloadAppSlice
   | BenifitsSlice
   | FeatureSlice
@@ -127,31 +128,31 @@ export interface LayoutDocumentDataCtaItem {
 type LayoutDocumentDataSlicesSlice = NavigationItemSlice;
 
 /**
- * Item in *Layout → Copy Right*
+ * Item in *Layout → Footer Navigate*
  */
-export interface LayoutDocumentDataCopyRightItem {
+export interface LayoutDocumentDataFooterNavigateItem {
   /**
-   * Primary text field in *Layout → Copy Right*
+   * CTA Link field in *Layout → Footer Navigate*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: layout.copy_right[].primary_text
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **API ID Path**: layout.footer_navigate[].cta_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  primary_text: prismic.KeyTextField;
+  cta_link: prismic.LinkField;
 
   /**
-   * Secondary text field in *Layout → Copy Right*
+   * CTA Label field in *Layout → Footer Navigate*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: layout.copy_right[].secondary_text
+   * - **API ID Path**: layout.footer_navigate[].cta_label
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  secondary_text: prismic.KeyTextField;
+  cta_label: prismic.KeyTextField;
 }
 
-type LayoutDocumentDataSlices1Slice = FooterItemSlice;
+type LayoutDocumentDataSlices1Slice = never;
 
 /**
  * Content for Layout documents
@@ -189,81 +190,39 @@ interface LayoutDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
   slices: prismic.SliceZone<LayoutDocumentDataSlicesSlice> /**
-   * CTA logo link field in *Layout*
+   * CTA Link logo field in *Layout*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: layout.cta_logo_link
+   * - **API ID Path**: layout.cta_link_logo
    * - **Tab**: footer
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */;
-  cta_logo_link: prismic.LinkField;
+  cta_link_logo: prismic.LinkField;
 
   /**
-   * CTA Link logo field in *Layout*
+   * CTA Logo field in *Layout*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: layout.cta_link_logo
+   * - **API ID Path**: layout.cta_logo
    * - **Tab**: footer
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  cta_link_logo: prismic.ImageField<never>;
+  cta_logo: prismic.ImageField<never>;
 
   /**
-   * Address field in *Layout*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: layout.address
-   * - **Tab**: footer
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  address: prismic.KeyTextField;
-
-  /**
-   * Phone number field in *Layout*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: layout.phone_number
-   * - **Tab**: footer
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  phone_number: prismic.KeyTextField;
-
-  /**
-   * Email field in *Layout*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: layout.email
-   * - **Tab**: footer
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  email: prismic.KeyTextField;
-
-  /**
-   * Social Media field in *Layout*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: layout.social_media
-   * - **Tab**: footer
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  social_media: prismic.ContentRelationshipField<"social_media">;
-
-  /**
-   * Copy Right field in *Layout*
+   * Footer Navigate field in *Layout*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: layout.copy_right[]
+   * - **API ID Path**: layout.footer_navigate[]
    * - **Tab**: footer
    * - **Documentation**: https://prismic.io/docs/field#group
    */
-  copy_right: prismic.GroupField<Simplify<LayoutDocumentDataCopyRightItem>>;
+  footer_navigate: prismic.GroupField<
+    Simplify<LayoutDocumentDataFooterNavigateItem>
+  >;
 
   /**
    * Slice Zone field in *Layout*
@@ -293,7 +252,74 @@ export type LayoutDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = HomePageDocument | LayoutDocument;
+type PageDocumentDataSlicesSlice =
+  | BackgroundWaveSlice
+  | BenifitsSlice
+  | FeatureSlice
+  | DownloadAppSlice
+  | HeroSlice
+  | AssociatedBrandSlice;
+
+/**
+ * Content for Page documents
+ */
+interface PageDocumentData {
+  /**
+   * Slice Zone field in *Page*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<PageDocumentDataSlicesSlice> /**
+   * Meta Description field in *Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: page.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Page*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: page.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Page document from Prismic
+ *
+ * - **API ID**: `page`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PageDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
+
+export type AllDocumentTypes = HomePageDocument | LayoutDocument | PageDocument;
 
 /**
  * Primary content in *AssociatedBrand → Primary*
@@ -384,6 +410,62 @@ type AssociatedBrandSliceVariation = AssociatedBrandSliceDefault;
 export type AssociatedBrandSlice = prismic.SharedSlice<
   "associated_brand",
   AssociatedBrandSliceVariation
+>;
+
+/**
+ * Primary content in *BackgroundWave → Primary*
+ */
+export interface BackgroundWaveSliceDefaultPrimary {
+  /**
+   * Image field in *BackgroundWave → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: background_wave.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Background field in *BackgroundWave → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: background_wave.primary.background
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  background: prismic.BooleanField;
+}
+
+/**
+ * Default variation for BackgroundWave Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BackgroundWaveSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BackgroundWaveSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *BackgroundWave*
+ */
+type BackgroundWaveSliceVariation = BackgroundWaveSliceDefault;
+
+/**
+ * BackgroundWave Shared Slice
+ *
+ * - **API ID**: `background_wave`
+ * - **Description**: BackgroundWave
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BackgroundWaveSlice = prismic.SharedSlice<
+  "background_wave",
+  BackgroundWaveSliceVariation
 >;
 
 /**
@@ -1138,14 +1220,21 @@ declare module "@prismicio/client" {
       LayoutDocumentDataLogoItem,
       LayoutDocumentDataCtaItem,
       LayoutDocumentDataSlicesSlice,
-      LayoutDocumentDataCopyRightItem,
+      LayoutDocumentDataFooterNavigateItem,
       LayoutDocumentDataSlices1Slice,
+      PageDocument,
+      PageDocumentData,
+      PageDocumentDataSlicesSlice,
       AllDocumentTypes,
       AssociatedBrandSlice,
       AssociatedBrandSliceDefaultPrimary,
       AssociatedBrandSliceDefaultItem,
       AssociatedBrandSliceVariation,
       AssociatedBrandSliceDefault,
+      BackgroundWaveSlice,
+      BackgroundWaveSliceDefaultPrimary,
+      BackgroundWaveSliceVariation,
+      BackgroundWaveSliceDefault,
       BenifitsSlice,
       BenifitsSliceDefaultPrimary,
       BenifitsSliceVariation,

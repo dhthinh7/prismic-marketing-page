@@ -1,7 +1,7 @@
 {
   "format": "page",
-  "id": "home_page",
-  "label": "Home Page",
+  "id": "page",
+  "label": "Page",
   "repeatable": true,
   "status": true,
   "json": {
@@ -20,19 +20,19 @@
             "background_wave": {
               "type": "SharedSlice"
             },
-            "download_app": {
-              "type": "SharedSlice"
-            },
             "benifits": {
               "type": "SharedSlice"
             },
             "feature": {
               "type": "SharedSlice"
             },
-            "associated_brand": {
+            "download_app": {
               "type": "SharedSlice"
             },
             "hero": {
+              "type": "SharedSlice"
+            },
+            "associated_brand": {
               "type": "SharedSlice"
             }
           }

@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 
 export const components = {
   associated_brand: dynamic(() => import("./AssociatedBrand")),
+  background_wave: dynamic(() => import("./BackgroundWave")),
   benifits: dynamic(() => import("./Benifits")),
   download_app: dynamic(() => import("./DownloadApp")),
   feature: dynamic(() => import("./Feature")),

@@ -7,6 +7,7 @@ import { popins } from "@/utils/fonts";
 
 // CSS
 import "@/styles/globals.css";
+import Footer from "@/components/Footer/Footer";
 
 export const metadata: Metadata = {
   title: "Smile + Co.",
@@ -31,7 +32,7 @@ export default async function RootLayout({
           <section className="flex-grow">
             {children}
           </section>
-          {/* <Footer layout={layout}/> */}
+          <Footer layout={layout}/>
         </div>
         <PrismicPreview repositoryName={repositoryName} />
       </body>

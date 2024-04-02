@@ -100,7 +100,6 @@ export default function RichText({ field, className, h1Class, h2Class, h3Class, 
               return <a target="_blank" className="hover:underline text-blue-600" href={url}>{children}</a>
             },
             label: ({ node, children }) => {
-              console.log('node', node.data.label)
               switch (node.data.label.toLowerCase()) {
                 case E_LABEL.PRIMARY_BOLD.toLowerCase():
                   return <span className="font-bold">{children}</span>
